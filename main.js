@@ -1,7 +1,8 @@
-const h2 = document.getElementById('h2');
-const h4 = document.getElementById('h4');
-const input = document.getElementById('input-number');
-const button = document.getElementById('button');
+const input = document.getElementById("input");
+const h2 = document.getElementById("h2");
+const h4 = document.getElementById("h4");
+const btn = document.getElementById("btn");
+
 
 class pizza {
     constructor(ID, nombre, ingredientes, precio) {
@@ -21,6 +22,7 @@ let pizzas = [muzzarella = new pizza(`1`, `Muzzarella`, ingredientes = [`tomate`
     sinQueso = new pizza(`6`, `Sin Queso`, ingredientes = [`tomate`, `oregano`], 500),
 ]
 
+
 function filtro(inputID) {
     const laPizza = pizzas.filter((piza) => piza.ID == inputID)
     for (piza of laPizza) {
@@ -36,9 +38,10 @@ function error() {
 
 }
 
+btn.addEventListener('click', button)
+
 function button(e) {
     e.preventDefault();
     var inputID = input.value.trim();
     inputID <= pizzas.length && inputID > 0 ? filtro(inputID) : error();
 }
-
